@@ -1,12 +1,13 @@
-import Router, { Router } from "express"
+import { Router } from "express"
+import * as authController from "../controller/auth.controller.js";
 
 const authRouter = Router()
 
-*/**
-    complete endpoint - 
-*/
+// */**
+//     complete endpoint - api/auth/register
+// */
 
-authRouter.post("/register", )
+authRouter.post("/register", authController.register)
 
 export default authRouter
 
