@@ -1,7 +1,7 @@
 import userModel from "../models/user.model.js"
 import config from "../config/config.js"
 import jwt from "jsonwebtoken" 
-import crypto from "express"
+import crypto from "crypto"
 
 export async function register(req, res) {
     const { username, email, password}= req.body
@@ -23,7 +23,7 @@ export async function register(req, res) {
         })
     }
 
-    const hashedPassword = crypto.createHash("sha256").update(password).digest("hex")
+    const hashedPassword = crypto.createHash("sha256").update(password).digest("hex");
 
     const user = await userModel.create({
         username,
